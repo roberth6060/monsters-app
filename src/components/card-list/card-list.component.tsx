@@ -1,10 +1,15 @@
-// import { useState, useEffect } from "react";
+
 import "./scss/card-list-style.css";
 import Card from "../card/card.component";
+import { Monster } from "../../App";
+
+
+type  CardListProps ={
+  monsters: Monster[];
+}
 
 const CardList = (
-  { monsters },
-  _forwardRef //Implicit return
+  { monsters } : CardListProps
 ) => (
   <div className="top-level-component">
     {monsters.map((monster) => {
