@@ -8,8 +8,10 @@
   backface-visibility: hidden;
   transform: translate(0);
   transition: transform 0.25s ease-out;
+  border-radius: 10px;
 }
 .card-container:hover {
   transform: scale(1.05);
   color: pink;
+  background-color: #527777;
 }

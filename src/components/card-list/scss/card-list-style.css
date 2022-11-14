@@ -1,10 +1,15 @@
 .top-level-component {
   width: 85vw;
   margin: 0 auto;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
 }
-/*# sourceMappingURL=card-list-style.css.map */
+
+.app-title {
+  margin-top: 75px;
+  margin-bottom: 50px;
+  font-size: 76px;
+  color: #0ccac4;
+  font-family: "Bigelow Rules";
+}/*# sourceMappingURL=card-list-style.css.map */

@@ -1,28 +1,18 @@
 .card-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   background-color: #95dada;
   padding: 25px;
   cursor: pointer;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  -webkit-transform: translate(0);
-          transform: translate(0);
-  -webkit-transition: -webkit-transform 0.25s ease-out;
-  transition: -webkit-transform 0.25s ease-out;
+  backface-visibility: hidden;
+  transform: translate(0);
   transition: transform 0.25s ease-out;
-  transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
+  border-radius: 10px;
 }
 
 .card-container:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  transform: scale(1.05);
   color: pink;
-}
-/*# sourceMappingURL=card.style.css.map */
+  background-color: #527777;
+}/*# sourceMappingURL=card.style.css.map */

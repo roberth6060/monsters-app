@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,oBAAoB,CAAC;EACnB,KAAK,EAAE,IAAI;EAEX,MAAM,EAAE,MAAM;EACd,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,eAAe;EACtC,QAAQ,EAAE,IAAI;CACf",
-    "sources": [
-        "card-list-style.scss"
-    ],
-    "names": [],
-    "file": "card-list-style.css"
-}
+{"version":3,"sourceRoot":"","sources":["card-list-style.scss"],"names":[],"mappings":"AAAA;EACE;EAEA;EACA;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACA;EACA","file":"card-list-style.css"}
