@@ -1,10 +1,10 @@
 import "./scss/search-box-style.css";
-import {ChangeEventHandler} from "react"
+import {ChangeEvent} from "react"
 
 type SearcBoxProps =  {
   className: string;
   placeholder?: string;
-  onChangehandler:ChangeEventHandler <HTMLInputElement>;
+  onChangehandler:(event: ChangeEvent <HTMLInputElement>) => void;
 }
 
 

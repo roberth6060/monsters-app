@@ -1,27 +1,38 @@
 // To use Hook:
-import { useState, useEffect } from "react";
-import React from "react";
+import { useState, useEffect, ChangeEvent } from "react";
 import CardList from "./components/card-list/card-list.component";
 import SearchBox from "./components/search-box/search-box.component";
 import "./scss/App.css";
+import { getData } from "./utils/data";
+
+
+/**
+ * Defining types 
+ */
+export type Monster = {
+  id: string, 
+  name: string,
+  email: string,
+}
 
 /* ================== Functional Component  ================== */
 const App = () => {
   //Only hooks ONE value. Need multiple for different values:
-  const [searchField, setSearchField] = useState(""); //[value, setValue]
+  const [searchField, setSearchField] = useState(""); 
   const [title, setTitle] = useState("");
-  const [monsters, setMonsters] = useState([]);
+  const [monsters, setMonsters] = useState<Monster[]>([]);
   const [monstersFiltered, setFilterMonsters] = useState(monsters);
 
-  console.log("Render New");
 
   //Triggers the first time in the App mounts:
   useEffect(() => {
-    //Only triggered once to avoid neverending loops ↯
-    console.log("Data fetched");
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((res) => res.json())
-      .then((data) => setMonsters(data));
+    const fetchUsers =async () => {
+      //Used typed to a Monster array
+      const user = await getData<Monster[]>("https://jsonplaceholder.typicode.com/users");
+
+      setMonsters(user);
+    }
+    fetchUsers();
   }, []);
 
   //Prevents the filteredMonsters from needlessly on each update
@@ -32,12 +43,12 @@ const App = () => {
     setFilterMonsters(newMonstersFiltered);
   }, [monsters, searchField]);
 
-  const onSearchChange = (e) => {
+  const onSearchChange = (e: ChangeEvent<HTMLInputElement>): void  => {
     const searchFieldString = e.target.value.toLowerCase();
     setSearchField(searchFieldString);
   };
 
-  const onTitleChange = (e) => {
+  const onTitleChange = (e: ChangeEvent<HTMLInputElement>): void => {
     const searchFieldString = e.target.value.toLowerCase();
     setTitle(searchFieldString);
   };
